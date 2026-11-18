@@ -1,1 +1,90 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article Manager | Amisa Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script defer src="article-admin.js"></script>
+</head>
+<body>
+  <main class="admin-page">
+    <header>
+      <h1>Amisa Studio</h1>
+      <p>Article Manager</p>
+      <a href="/admin">Back to product dashboard</a>
+    </header>
+
+    <section id="loginPanel">
+      <h2>Admin login</h2>
+      <form id="loginForm">
+        <label>Email</label>
+        <input id="email" type="email" required>
+        <label>Password</label>
+        <input id="password" type="password" required>
+        <button type="submit">Sign in</button>
+        <p id="loginMessage"></p>
+      </form>
+    </section>
+
+    <section id="dashboard" hidden>
+      <div class="admin-actions">
+        <h2>Manage articles</h2>
+        <button id="logout" type="button">Log out</button>
+      </div>
+
+      <form id="articleForm">
+        <input type="hidden" id="articleId">
+
+        <label for="title">Article title</label>
+        <input id="title" type="text" required placeholder="Enter article title">
+
+        <label for="category">Category</label>
+        <select id="category">
+          <option>Beauty &amp; Skincare</option>
+          <option>Fashion &amp; Accessories</option>
+          <option>Home Décor</option>
+          <option>Home &amp; Kitchen</option>
+          <option>Electronics &amp; Gadgets</option>
+          <option>Jewellery</option>
+          <option>Lifestyle</option>
+        </select>
+
+        <label for="excerpt">Short description</label>
+        <textarea id="excerpt" rows="3" required placeholder="A short introduction for article cards"></textarea>
+
+        <label for="image">Cover image</label>
+        <input id="image" type="file" accept="image/jpeg,image/png,image/webp">
+
+        <label>Article content</label>
+        <div class="editor-toolbar">
+          <button type="button" data-command="bold"><b>B</b></button>
+          <button type="button" data-command="italic"><i>I</i></button>
+          <button type="button" data-command="formatBlock" data-value="h2">Heading</button>
+          <button type="button" data-command="formatBlock" data-value="h3">Subheading</button>
+          <button type="button" data-command="insertUnorderedList">Bullet list</button>
+          <button type="button" data-command="insertOrderedList">Numbered list</button>
+          <button type="button" data-command="createLink">Add link</button>
+        </div>
+
+        <div id="editor" contenteditable="true" role="textbox" aria-multiline="true" class="article-editor"></div>
+
+        <div class="admin-actions">
+          <button type="submit" id="draftButton">Save draft</button>
+          <button type="button" id="publishButton">Publish article</button>
+          <button type="button" id="clearButton">Clear form</button>
+        </div>
+
+        <p id="formMessage"></p>
+      </form>
+
+      <hr>
+      <h2>Your articles</h2>
+      <div id="articleList"></div>
+    </section>
+  </main>
+</body>
+</html>
