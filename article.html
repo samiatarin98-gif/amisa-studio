@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Article | Amisa Studio</title>
+  <meta name="description" content="Explore helpful shopping guides and product insights at Amisa Studio.">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Amisa Studio">
+  <meta property="og:title" content="Article | Amisa Studio">
+  <meta property="og:description" content="Explore helpful guides at Amisa Studio.">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script defer src="article.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <a href="/" class="logo">Amisa Studio</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/#categories">Categories</a>
+      <a href="/#products">Discover</a>
+      <a href="/#about">About</a>
+    </nav>
+  </header>
+
+  <main class="article-page">
+    <div class="article-container">
+
+      <a href="/" class="back-link">← Back to Amisa Studio</a>
+
+      <div id="articleLoading">
+        <p>Loading article...</p>
+      </div>
+
+      <div id="articleError" hidden>
+        <h1>Article not found</h1>
+        <p>This article may have been removed or is not published yet.</p>
+        <a href="/">Explore Amisa Studio</a>
+      </div>
+
+      <article id="articleContent" hidden>
+        <div class="article-header">
+          <span id="articleCategory" class="tag"></span>
+          <h1 id="articleTitle"></h1>
+          <p id="articleExcerpt"></p>
+          <p class="article-date" id="articleDate"></p>
+        </div>
+
+        <img id="articleCover" class="article-cover" alt="" hidden>
+
+        <div id="articleBody" class="article-body"></div>
+
+        <div class="article-footer">
+          <p>Enjoyed this guide?</p>
+          <p>Discover more helpful finds and shopping inspiration at Amisa Studio.</p>
+          <a href="/">Explore Amisa Studio →</a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Amisa Studio. All rights reserved.</p>
+    <a href="/#about">About</a>
+    <a href="/contact.html">Contact</a>
+  </footer>
+</body>
+</html>
