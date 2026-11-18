@@ -546,3 +546,203 @@ h1,h2,h3{
   .admin-item{align-items:flex-start}
   .admin-actions{flex-direction:column}
 }
+
+/* ARTICLE MANAGER */
+
+.admin-page {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 24px;
+  color: var(--ink);
+}
+
+.admin-page header {
+  margin-bottom: 30px;
+}
+
+.admin-page form {
+  display: grid;
+  gap: 12px;
+}
+
+.admin-page input,
+.admin-page select,
+.admin-page textarea,
+.article-editor {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+}
+
+.admin-page button {
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--teal);
+  color: white;
+  cursor: pointer;
+}
+
+.admin-page button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.admin-page a {
+  color: var(--teal);
+}
+
+.editor-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.editor-toolbar button {
+  background: var(--teal-light);
+  color: var(--ink);
+}
+
+.article-editor {
+  min-height: 350px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.article-editor:focus {
+  outline: 2px solid var(--clay);
+}
+
+.article-page {
+  padding: 50px 20px;
+}
+
+.article-container {
+  max-width: 820px;
+  margin: auto;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.article-header {
+  margin-bottom: 30px;
+}
+
+.article-header h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.article-header p {
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.article-date {
+  font-size: .9rem;
+}
+
+.article-cover {
+  display: block;
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 30px 0;
+}
+
+.article-body {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.article-body h2 {
+  margin-top: 35px;
+  font-family: Georgia, serif;
+}
+
+.article-body h3 {
+  margin-top: 25px;
+}
+
+.article-body a {
+  color: var(--teal);
+}
+
+.article-body blockquote {
+  border-left: 3px solid var(--clay);
+  padding-left: 18px;
+  margin: 25px 0;
+}
+
+.article-footer {
+  margin-top: 55px;
+  padding: 25px;
+  background: var(--teal-light);
+  border-radius: 12px;
+  line-height: 1.8;
+}
+
+.article-footer a {
+  font-weight: bold;
+}
+
+.admin-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.admin-info {
+  flex: 1;
+  min-width: 150px;
+}
+
+.admin-info small {
+  display: block;
+  margin-top: 5px;
+}
+
+.admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.admin-thumb {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  .admin-page {
+    padding: 16px;
+    margin: 20px auto;
+  }
+
+  .article-page {
+    padding: 30px 16px;
+  }
+
+  .article-editor {
+    min-height: 250px;
+  }
+}
