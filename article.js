@@ -104,7 +104,12 @@ function showNotFound() {
 async function loadArticle() {
   $('year').textContent = new Date().getFullYear();
 
-  const slug = new URLSearchParams(window.location.search).get('slug');
+  // Read the slug from either URL format.
+  const params = new URLSearchParams(window.location.search);
+  const pathParts = window.location.pathname.split('/').filter(Boolean);
+
+  const slug = params.get('slug') ||
+    (pathParts[0] === 'articles' ? pathParts[1] : null);
 
   if (!slug || !configured()) {
     showNotFound();
