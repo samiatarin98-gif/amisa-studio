@@ -137,10 +137,12 @@ function renderArticles(db, articles) {
         })
       : '';
 
+    const articleUrl = `/article.html?slug=${encodeURIComponent(article.slug)}`;
+
     return `
       <article class="article-card">
         <a class="article-card-image"
-           href="/articles/${encodeURIComponent(article.slug)}"
+           href="${articleUrl}"
            aria-label="Read ${safe(article.title)}">
           ${imageUrl
             ? `<img src="${safe(imageUrl)}" alt="${safe(article.title)}" loading="lazy">`
@@ -153,7 +155,7 @@ function renderArticles(db, articles) {
           <p>${safe(article.excerpt || '')}</p>
           <div class="article-card-footer">
             <small>${safe(dateText)}</small>
-            <a href="/articles/${encodeURIComponent(article.slug)}">Read the guide →</a>
+            <a href="${articleUrl}">Read the guide →</a>
           </div>
         </div>
       </article>
